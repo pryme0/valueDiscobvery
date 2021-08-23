@@ -1,0 +1,12 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/user/public_html/
+    - /bin/cp package.json $DEPLOYPATH
+    - /bin/cp package.lock.json $DEPLOYPATH
+    - /bin/cp ./public $DEPLOYPATH
+    - /bin/cp ./routes $DEPLOYPATH
+    - /bin/cp ./views $DEPLOYPATH
+    - /bin/cp ./bin $DEPLOYPATH
+    - run npm install
+    - run npm start
